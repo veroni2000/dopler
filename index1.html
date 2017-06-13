@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ефект на Доплер</title>
+	<meta charset="utf-8">
+</head>
+<style>
+#first{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border: 5px solid grey;
+  border-radius: 50%;
+  display: inline-block;
+}
+#second{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-top: 45px;
+  margin-left: 45px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#third{
+width: 100px;
+  height: 100px;
+  position: relative;
+   margin-top: 45px;
+  margin-left: 45px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#izt{
+  position: relative;
+   margin-top: 35px;
+  margin-left: 30px;
+}
+#right{
+	display: inline-block;
+}
+#wrapper{
+	margin-left: 35%;
+}
+#button1{
+	margin-left: 39%;
+	margin-top: 40px;
+	background-color: orange;
+	border-radius: 10px;
+	width: 230px;
+	height: 40px;
+	font-family: Arial;
+	font-size: 20px;
+}
+.f1{
+	margin-left: 43%;
+}
+#gif{
+	margin-left: 28%;
+	margin-top: 30px;
+	width: 40%
+}
+</style>
+<body>
+<h1 class="f1">λν=u</h1>
+<div id="wrapper">
+	<div id="first">
+		<div id="second">
+			<div id="third">
+				<div id="izt"><img src="train.png" width="35px"></div>
+			</div>
+		</div>
+	</div>
+	<div id="right"><img src="hear.png" width="60px"></div>
+</div>
+<img src="white.png" id="gif">
+<button id="button1" onclick="Move()">Доближи източника</button>
+	<script type="text/javascript">
+	function Move() {
+		var gif=document.getElementById("gif"); 
+		gif.src='gif3.gif';
+		setTimeout(giftimer, 3000);
+		function giftimer(){
+			gif.src='white.png';
+		}
+  var second = document.getElementById("second");   
+  var third = document.getElementById("third");
+  var izt = document.getElementById("izt"); 
+  var pos = 0;
+  var id = setInterval(frame, 200);
+  var id1 = setInterval(frame1, 200);
+  var id2 = setInterval(frame2, 200);
+  function frame() {
+    if (pos == 40) {
+      clearInterval(id);
+    } else {
+      pos++;  
+      second.style.left = pos + 'px'; 
+    }
+  }
+    function frame1() {
+    if (pos == 40) {
+      clearInterval(id1);
+    } else {
+      pos++;  
+      third.style.left = pos + 'px'; 
+    }
+  }
+   function frame2() {
+    if (pos == 35) {
+      clearInterval(id2);
+    } else {
+      pos++;  
+      izt.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+</body>
+</html>
