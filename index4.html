@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ударна вълна</title>
+	<meta charset="utf-8">
+</head>
+<style>
+#first{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border: 5px solid grey;
+  border-radius: 50%;
+  display: inline-block;
+}
+#second{
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin-top: 20px;
+  margin-left: 20px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#third{
+width: 200px;
+  height: 200px;
+  position: relative;
+   margin-top: 20px;
+  margin-left: 20px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#fourth{
+width: 150px;
+  height: 150px;
+  position: relative;
+   margin-top: 20px;
+  margin-left: 20px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#fifth{
+width: 100px;
+  height: 100px;
+  position: relative;
+   margin-top: 20px;
+  margin-left: 20px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#sixth{
+width: 50px;
+  height: 50px;
+  position: relative;
+   margin-top: 20px;
+  margin-left: 20px;
+   border: 5px solid grey;
+  border-radius: 50%;
+}
+#seventh{
+width: 10px;
+  height: 10px;
+  position: relative;
+   margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+#wrapper{
+	margin-left: 35%;
+}
+#button1{
+	margin-left: 39%;
+	margin-top: 40px;
+	background-color: orange;
+	border-radius: 10px;
+	width: 230px;
+	height: 40px;
+	font-family: Arial;
+	font-size: 20px;
+}
+</style>
+<body>
+<div id="wrapper">
+	<div id="first">
+		<div id="second">
+			<div id="third">
+      <div id="fourth">
+        <div id="fifth">
+          <div id="sixth">
+            <div id="seventh">
+              <img id="plane" src="plane1.png" width="40px">
+            </div>
+          </div>
+        </div>
+      </div>
+			</div>
+		</div>
+	</div>
+</div>
+<button id="button1" onclick="Move()">Задвижи източника</button>
+	<script type="text/javascript">
+	function Move() {
+    setTimeout(giftimer, 2500);
+    function giftimer(){
+      location.reload();
+    }
+  var second = document.getElementById("second");   
+  var pos = 0;
+  var id2 = setInterval(frame2, 300);
+  function frame2() {
+    if (pos == 40) {
+      clearInterval(id2);
+    } else {
+      pos++;  
+      second.style.left = pos + 'px'; 
+    }
+  }
+    var third = document.getElementById("third");   
+  var pos = 0;
+  var id3 = setInterval(frame3, 300);
+  function frame3() {
+    if (pos == 40) {
+      clearInterval(id3);
+    } else {
+      pos++;  
+      third.style.left = pos + 'px'; 
+    }
+  }
+    var fourth= document.getElementById("fourth");   
+  var pos = 0;
+  var id4 = setInterval(frame4, 300);
+  function frame4() {
+    if (pos == 40) {
+      clearInterval(id4);
+    } else {
+      pos++;  
+      fourth.style.left = pos + 'px'; 
+    }
+  }
+    var fifth = document.getElementById("fifth");   
+  var pos = 0;
+  var id5 = setInterval(frame5, 300);
+  function frame5() {
+    if (pos == 40) {
+      clearInterval(id5);
+    } else {
+      pos++;  
+      fifth.style.left = pos + 'px'; 
+    }
+  }
+  var sixth = document.getElementById("sixth");   
+  var pos = 0;
+  var id6 = setInterval(frame6, 300);
+  function frame6() {
+    if (pos == 40) {
+      clearInterval(id6);
+    } else {
+      pos++;  
+      sixth.style.left = pos + 'px'; 
+    }
+  }
+  var seventh = document.getElementById("seventh");   
+  var pos = 0;
+  var id7 = setInterval(frame7, 300);
+  function frame7() {
+    if (pos == 35) {
+      clearInterval(id7);
+    } else {
+      pos++;  
+      seventh.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+</body>
+</html>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ефект на Доплер</title>
-	<meta charset="utf-8">
+  <title>Ефект на Доплер</title>
+  <meta charset="utf-8">
 </head>
 <style>
-body{
-  font-family: Arial;
-  font-size: 18px;
-}
 #first{
   width: 300px;
   height: 300px;
@@ -41,13 +37,14 @@ width: 100px;
   margin-left: 30px;
 }
 #right{
-	display: inline-block;
+  display: inline-block;
+  margin-left: 40px;
 }
 #wrapper{
-	margin-left: 30%;
+  margin-left: 35%;
 }
 #button1{
-  margin-left: 37%;
+  margin-left: 39%;
   margin-top: 40px;
   background-color: orange;
   border-radius: 10px;
@@ -57,64 +54,37 @@ width: 100px;
   font-size: 20px;
 }
 .f1{
-	margin-left: 43%;
+  margin-left: 43%;
 }
 #gif{
-	margin-left: 28%;
-	margin-top: 30px;
-	width: 40%
-}
-#faqs{
-    margin-left: 41%;
-}
-a {
-    color: black;
-    text-decoration: none; 
-}
-a:focus, a:hover {
-  color: orange;
-}
-#div2 {
-  display: none;
-  text-align: center;
+  margin-left: 28%;
+  margin-top: 30px;
   width: 40%
-}
-p{
-  margin-left: -30%
 }
 </style>
 <body>
-<div id="faqs">
-<h1><a href="#">λν=u=const</a></h1>
-<div id="div2">
-  <p>u-скорост на звука в средата</p>
-  <p>λ-разстояние</p>
-  <p>ν-честота</p>
-  <p>Честотата се увеличава, когато разстоянието намалява и обратно, защото скоростта на звука е константа.</p>
-</div>
-</div>
+<h1 class="f1">λν=u</h1>
 <div id="wrapper">
-<div id="right"><img src="hear1.png" width="60px"></div>
-	<div id="first">
-		<div id="second">
-			<div id="third">
-				<div id="izt"><img src="train.png" width="35px"></div>
-			</div>
-		</div>
-	</div>
+  <div id="first">
+    <div id="second">
+      <div id="third">
+        <div id="izt"><img src="train.png" width="35px"></div>
+      </div>
+    </div>
+  </div>
+  <div id="right"><img src="hear.png" width="60px"></div>
 </div>
 <img src="white.png" id="gif">
-<button id="button1" onclick="Move()">Отдалечи източника</button>
-<script src="jquery-3.2.1.min.js"></script>
-	<script type="text/javascript">
-	function Move() {
-		var gif=document.getElementById("gif"); 
-		gif.src='gif4.gif';
-		setTimeout(giftimer, 3000);
-		function giftimer(){
-			gif.src='white.png';
+<button id="button1" onclick="Move()">Доближи източника</button>
+  <script type="text/javascript">
+  function Move() {
+    var gif=document.getElementById("gif"); 
+    gif.src='gif3.gif';
+    setTimeout(giftimer, 3000);
+    function giftimer(){
+      gif.src='white.png';
       location.reload();
-		}
+    }
   var second = document.getElementById("second");   
   var third = document.getElementById("third");
   var izt = document.getElementById("izt"); 
@@ -146,16 +116,18 @@ p{
       izt.style.left = pos + 'px'; 
     }
   }
+  var right1 = document.getElementById("right");   
+  var pos = 0;
+  var idr = setInterval(frameR, 300);
+  function frameR() {
+    if (pos == 40) {
+      clearInterval(idr);
+    } else {
+      pos++;  
+      right1.style.right = pos + 'px'; 
+    }
+  }
 }
-    $("#faqs h1").click(function() {
-    $(this).toggleClass("minus");
-    if ($(this).attr("class") != "minus") {
-        $(this).next().hide();
-      }
-      else {
-          $(this).next().show();
-      }
-    }); // end click
 </script>
 </body>
 </html>
